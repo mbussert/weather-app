@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 left">
+                    <h5 class="pt-4">Search for a City:</h5>
+                    <div class="input-group mb-3 pt-2" id="search-form">
+                        <input type="text" class="form-control" placeholder="e.g. Detroit"
+                            aria-label="City to Search" aria-describedby="button-addon2" id="search-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="searchbtn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="list-group" id="search-history">
+                    </div>
+
+                </div>
+                <div class="col-10 right">
+                    <div class="jumbotron jumbotron-fluid mt-3 rounded mainjumbo">
+                        <div class="container custom-jumbo">
+                            <h1 class="display-4 pt-0" id="cityname"></h1>
+                            <h4 id="current-date">Please search by city name to begin.</h4>
+                            <p class="lead"><span id="description"></span> <img class="weathicon" id="icon" src=""></p>
+                            <p class="lead"><span id="temperature"></span></p>
+                            <p class="lead"><span id="humidity"></span></p>
+                            <p class="lead"><span id="wind-speed"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="jumbotron jumbotron-fluid mt-2 rounded mainjumbo">
+                        <div class="container-fluid fivedayjumbo">
+                            <h1 class="display-4 pl-4 pb-2">5-Day Forecast:</h1>
+                            <div class="card-deck cardsize">
+                                <div class="card pl-0 m-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="forecast-one"></h5>
+                                        <img class="weathicon" id="dayoneicon" src="">
+                                        <p class="card-text"><span id="dayone-temp"></span></p>
+                                        <p class="card-text"><span id="dayone-humidity"></span></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="forecast-two"></h5>
+                                        <img class="weathicon" id="daytwoicon" src="">
+                                        <p class="card-text"><span id="daytwo-temp"></span></p>
+                                        <p class="card-text"><span id="daytwo-humidity"></span></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="forecast-three"></h5>
+                                        <img class="weathicon" id="daythreeicon" src="">
+                                        <p class="card-text"><span id="daythree-temp"></span></p>
+                                        <p class="card-text"><span id="daythree-humidity"></span></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="forecast-four"></h5>
+                                        <img class="weathicon" id="dayfouricon" src="">
+                                        <p class="card-text"><span id="dayfour-temp"></span></p>
+                                        <p class="card-text"><span id="dayfour-humidity"></span></p>
+                                    </div>
+                                </div>
+                                <div class="card mr-3 pr-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="forecast-five"></h5>
+                                        <img class="weathicon" id="dayfiveicon" src="">
+                                        <p class="card-text"><span id="dayfive-temp"></span></p>
+                                        <p class="card-text"><span id="dayfive-humidity"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/de8ac476aa.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
