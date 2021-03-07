@@ -4,6 +4,13 @@
     --prussian-blue: #023047ff;
     --honey-yellow: #ffb703ff;
     --orange: #fb8500ff;
+
+    --gray: #2B2B2B;
+    --red: #DE1B1B;
+    --snow: #F6F6F6;
+    --yellow: #E9E581;
+
+
 }
 
 * {
@@ -13,28 +20,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: var(--gray);
+}
+
 header {
     width: 100%;
     height: 9vh;
-    background-color: var(--blue-green);
+    background-color: var(--gray);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 5px var(--snow) solid;
 }
 
 header h1 {
-    color: var(--prussian-blue);
+    color: var(--yellow);
     font-weight: 500;
 }
 
 .left {
-    height: 91vh;
-    background-color: var(--prussian-blue);
+    height: 90vh;
+    background-color: var(--gray);
+    border-radius: 4px;
 }
 
 .right {
-    height: 91vh;
-    background-color: var(--light-cornflower-blue);
+    height: 90vh;
+    background-color: var(--snow);
 }
 
 .form-control::placeholder {
@@ -47,10 +60,15 @@ header h1 {
     
 }
 
+.left h5 {
+    color: var(--yellow);
+}
+
 .mainjumbo {
     padding-top: 1vh;
     padding-bottom: .5vh;
-    background-color: var(--honey-yellow);
+    background-color: var(--gray);
+    color: var(--snow);
 }
 
 .fivedayjumbo {
@@ -58,12 +76,18 @@ header h1 {
     margin-left: .5vw;
     padding: 0px;
     padding-bottom: 1vh;
+    color: var(--yellow);
 }
 
 .cardsize {
     width: 80vw;
     padding: 0;
     margin: auto;
+}
+
+.card {
+    background-color: var(--snow);
+    color: var(--gray);
 }
 
 img[src=""] {
@@ -73,4 +97,22 @@ img[src=""] {
 .weathicon {
     width: 3rem;
     font-size: 1rem;
+}
+
+i {
+    color: var(--yellow);
+}
+
+.form-control {
+    background-color: var(--snow);
+    border: 1px solid var(--snow);
+    outline: none;
+}
+
+button {
+    border: 1px solid var(--snow);
+}
+
+button:focus, button:active {
+    outline: none;
 }
